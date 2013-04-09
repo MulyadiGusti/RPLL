@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Sistem Informasi Akademik</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="indexButton">
+            <p:button value="Index" outcome="index.xhtml"/>
+        </h:form>
+        
+        <h:form id="updateBadanHukumButton">
+            <p:button value="Update Badan Hukum" outcome="UpdateBadanHukum.xhtml"/>
+        </h:form>
+        
+        <h:form id="updateFasilitasButton">
+            <p:button value="Update Fasilitas" outcome="UpdateFasilitas.xhtml"/>
+        </h:form>
+        
+        <h:form id="halamanUtamaDosenButton">
+            <p:button value="Halaman Utama Dosen" outcome="HalamanUtamaDosen.xhtml"/>
+        </h:form>
+        
+        <h:form>
+           
+            <p:dataTable value="#{staffAdminController.pengumumanList}" var="list">
+                <p:column headerText="Kode Pengumuman">
+                    #{list.kodePengumuman}
+                </p:column>
+                <p:column headerText="Judul">     
+                    #{list.judul}
+                </p:column>
+                <p:column headerText="Isi">     
+                    #{list.isi}
+                </p:column>
+                <p:column headerText="Departemen">     
+                    #{list.departemen.namaDepart}
+                </p:column>
+                
+            </p:dataTable>
+                     
+        </h:form>
+    </h:body>
+</html>

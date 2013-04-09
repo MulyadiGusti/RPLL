@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.BadanHukum" table="badan_hukum" catalog="sia">
+        <id name="kodeBhukum" type="string">
+            <column name="KODE_BHUKUM" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fasilitas" class="com.ithb.model.Fasilitas" fetch="select">
+            <column name="KODE_FASILITAS" length="20" />
+        </many-to-one>
+        <property name="namaBhukum" type="string">
+            <column name="NAMA_BHUKUM" length="40" />
+        </property>
+        <property name="tanggalBerdiri" type="string">
+            <column name="TANGGAL_BERDIRI" length="40" />
+        </property>
+        <property name="nomorAkta" type="string">
+            <column name="NOMOR_AKTA" length="40" />
+        </property>
+        <property name="tanggalAkta" type="string">
+            <column name="TANGGAL_AKTA" length="40" />
+        </property>
+        <property name="kota" type="string">
+            <column name="KOTA" length="40" />
+        </property>
+        <property name="alamat" type="string">
+            <column name="ALAMAT" length="40" />
+        </property>
+        <property name="kodePos" type="string">
+            <column name="KODE_POS" length="20" />
+        </property>
+        <property name="nomorPengesahan" type="string">
+            <column name="NOMOR_PENGESAHAN" length="20" />
+        </property>
+        <property name="tanggalPengesahan" type="string">
+            <column name="TANGGAL_PENGESAHAN" length="40" />
+        </property>
+        <property name="telepon" type="string">
+            <column name="TELEPON" length="20" />
+        </property>
+        <property name="faks" type="string">
+            <column name="FAKS" length="20" />
+        </property>
+        <property name="homepage" type="string">
+            <column name="HOMEPAGE" length="40" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

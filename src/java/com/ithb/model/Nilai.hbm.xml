@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Nilai" table="nilai" catalog="sia">
+        <composite-id name="id" class="com.ithb.model.NilaiId">
+            <key-property name="nim" type="string">
+                <column name="NIM" length="20" />
+            </key-property>
+            <key-property name="kodeMatkul" type="string">
+                <column name="KODE_MATKUL" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="mataKuliah" class="com.ithb.model.MataKuliah" update="false" insert="false" fetch="select">
+            <column name="KODE_MATKUL" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="mahasiswa" class="com.ithb.model.Mahasiswa" update="false" insert="false" fetch="select">
+            <column name="NIM" length="20" not-null="true" />
+        </many-to-one>
+        <property name="indeks" type="string">
+            <column name="INDEKS" length="20" />
+        </property>
+        <property name="semester" type="string">
+            <column name="SEMESTER" length="20" />
+        </property>
+        <property name="nilai1" type="java.lang.Integer">
+            <column name="NILAI1" />
+        </property>
+        <property name="nilai2" type="java.lang.Integer">
+            <column name="NILAI2" />
+        </property>
+        <property name="nilai3" type="java.lang.Integer">
+            <column name="NILAI3" />
+        </property>
+        <property name="nilai4" type="java.lang.Integer">
+            <column name="NILAI4" />
+        </property>
+        <property name="nilai5" type="java.lang.Integer">
+            <column name="NILAI5" />
+        </property>
+        <property name="uas" type="java.lang.Integer">
+            <column name="UAS" />
+        </property>
+    </class>
+</hibernate-mapping>

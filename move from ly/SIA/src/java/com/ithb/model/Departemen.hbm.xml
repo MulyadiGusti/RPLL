@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Departemen" table="departemen" catalog="sia">
+        <id name="kodeDepart" type="string">
+            <column name="KODE_DEPART" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pegawai" class="com.ithb.model.Pegawai" fetch="select">
+            <column name="NIP" length="20" />
+        </many-to-one>
+        <many-to-one name="fakultas" class="com.ithb.model.Fakultas" fetch="select">
+            <column name="KODE_FAKULTAS" length="20" />
+        </many-to-one>
+        <property name="namaDepart" type="string">
+            <column name="NAMA_DEPART" length="40" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

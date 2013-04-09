@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Dosen" table="dosen" catalog="sia">
+        <id name="nip" type="string">
+            <column name="NIP" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pegawai" class="com.ithb.model.Pegawai" update="false" insert="false" fetch="select">
+            <column name="NIP" length="20" not-null="true" unique="true" />
+        </many-to-one>
+        <many-to-one name="departemen" class="com.ithb.model.Departemen" fetch="select">
+            <column name="KODE_DEPART" length="20" />
+        </many-to-one>
+        <property name="passDosen" type="string">
+            <column name="PASS_DOSEN" length="20" />
+        </property>
+        <property name="statusDosen" type="string">
+            <column name="STATUS_DOSEN" length="40" />
+        </property>
+        <property name="gelar" type="string">
+            <column name="GELAR" length="40" />
+        </property>
+        <property name="tanggalIjazah" type="string">
+            <column name="TANGGAL_IJAZAH" length="40" />
+        </property>
+        <property name="kodeAsal" type="string">
+            <column name="KODE_ASAL" length="20" />
+        </property>
+        <property name="kodeNegara" type="string">
+            <column name="KODE_NEGARA" length="20" />
+        </property>
+        <property name="jenjangStudi" type="string">
+            <column name="JENJANG_STUDI" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

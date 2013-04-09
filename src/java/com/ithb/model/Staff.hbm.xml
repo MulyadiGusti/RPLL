@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Staff" table="staff" catalog="sia">
+        <id name="nip" type="string">
+            <column name="NIP" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pegawai" class="com.ithb.model.Pegawai" update="false" insert="false" fetch="select">
+            <column name="NIP" length="20" not-null="true" unique="true" />
+        </many-to-one>
+        <property name="passStaff" type="string">
+            <column name="PASS_STAFF" length="20" />
+        </property>
+        <property name="jabatan" type="string">
+            <column name="JABATAN" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

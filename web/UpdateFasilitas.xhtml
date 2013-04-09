@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Update Fasilitas </title>
+        <link href="../asd/Style/style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div id="menu-wrapper">
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="#">Home</a></li>
+<!--                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Links</a></li>-->
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <div id="upperleft"> 
+                    <h:form>
+                        <p:inputText value="ID"> <label style="color: whitesmoke"> NIM </label></p:inputText>
+                        <p:inputText value="password" > <label style="color:whitesmoke"> Password </label></p:inputText>
+                    </h:form>
+                </div>
+            </div>
+            <!-- end #menu --> 
+        </div>
+
+        <div id="header-wrapper">
+            <div id="header">
+                <div id="logo">
+                    <img src="asd/gambarRPLL/logo.png"/>
+                </div>
+            </div>
+        </div>    
+
+
+        <div id="banner">
+            <p:imageSwitch effect="zoom">  
+                <ui:repeat value="#{imageSwitch.images}" var="image">  
+                    <p:graphicImage value="/asd/gambarRPLL/#{image}"/>  
+                </ui:repeat>  
+            </p:imageSwitch>
+        </div>
+        <div id="wrapper"> 
+            <!-- end #header -->
+            <div id="page">
+                <div id="page-bgtop">
+                    <div id="page-bgbtm">
+                        <div id="sidebar">
+                            <ul>
+                                <li>
+                                    <h2> Links </h2>
+                                    <ul>
+                                        <li><a href="UpdateBadanHukum.xhtml">Update Badan Hukum</a></li>
+                                        <li><a href="UpdateFasilitas.xhtml">Update Fasilitas</a></li>
+                                        <li><a href="HalamanUtamaMahasiswa.xhtml">Halaman Utama Mahasiswa</a></li>
+                                        <li><a href="HalamanUtamaDosen.xhtml">Halaman Utama Dosen</a></li>
+                                        <li><a href="S5UpdateMahasiswaAlumni.xhtml">Insert / Update Data Mahasiswa</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end #sidebar -->
+                        <div id="content">
+                            <div class="post">
+                                <h2 class="title"><a href="#"> Update Fasilitas </a></h2>
+                                <p class="meta"><span class="date">February 15, 2013</span><span class="posted">Posted by <a href="#">Admin</a></span></p>
+                                <div style="clear: both;">&nbsp;</div>
+                                <div class="entry">
+                                        
+                                    <h:form id="indexButton">
+                                        <p:button value="Index" outcome="index.xhtml"/>
+                                    </h:form>
+
+                                    <h:form id="updateBadanHukumButton">
+                                        <p:button value="Update Badan Hukum" outcome="UpdateBadanHukum.xhtml"/>
+                                    </h:form>
+
+                                    <h:form>
+                                        <p:panel header="Fasilitas">
+                                            <h:panelGrid columns="3">
+
+                                                <h:outputText value="Kode Fasilitas"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.kodeFasilitas}"/>
+
+                                                <h:outputText value="Luas Tanah"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.luasTanah}"/>
+
+                                                <h:outputText value="Luas Lahan"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.luasLahan}"/>
+
+                                                <h:outputText value="Luas Ruang Kuliah"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.luasRkuliah}"/>
+
+                                                <h:outputText value="Jumlah Ruang Kuliah"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.jumlahRkuliah}"/>
+
+                                                <h:outputText value="Luas Ruang Lab"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.luasRlab}"/>
+
+                                                <h:outputText value="Jumlah Ruang Lab"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.jumlahRlab}"/>
+
+                                                <h:outputText value="Luas Ruang Dosen"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.luasRdosen}"/>
+
+                                                <h:outputText value="Luas Ruang Admin"/>
+                                                <h:outputText value=":"/>
+                                                <p:inputText value="#{staffAdminController.fasilitas.luasRdmin}"/>
+
+
+                                                <p:commandButton value="Update Fasilitas" action="#{staffAdminController.updateFasilitas}" update="@form, :successForm" onclick="successDialog.show()"/>
+
+                                            </h:panelGrid>
+                                        </p:panel>
+                                    </h:form>
+
+                                    <p:dialog widgetVar="successDialog" showEffect="fade" hideEffect="fade" modal="true" maximizable="true" header="Confirmation Update Fasilitas">
+                                        <h:form id="successForm">
+                                            <h:outputText value="#{staffAdminController.output}"/><br/><br/>
+                                            <p:commandButton value="OK" action="#{staffAdminController.deleteOutput}" oncomplete="successDialog.hide();"/>
+                                        </h:form>
+                                    </p:dialog>
+
+
+                                </div>
+                            </div>
+<!--                       <div class="post">
+                               
+                            </div>
+                            <div class="post">
+                                
+                            </div>-->
+                            <div style="clear: both;">&nbsp;</div>
+                        </div>
+
+                        <div style="clear: both;">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <!-- end #page --> 
+        </div>        
+
+
+    </h:body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3303/sia?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <mapping resource="com/ithb/model/Nilai.hbm.xml"/>
+    <mapping resource="com/ithb/model/HakAkses.hbm.xml"/>
+    <mapping resource="com/ithb/model/Kelas.hbm.xml"/>
+    <mapping resource="com/ithb/model/Staff.hbm.xml"/>
+    <mapping resource="com/ithb/model/Mahasiswa.hbm.xml"/>
+    <mapping resource="com/ithb/model/Departemen.hbm.xml"/>
+    <mapping resource="com/ithb/model/Periode.hbm.xml"/>
+    <mapping resource="com/ithb/model/Absen.hbm.xml"/>
+    <mapping resource="com/ithb/model/MataKuliah.hbm.xml"/>
+    <mapping resource="com/ithb/model/Biaya.hbm.xml"/>
+    <mapping resource="com/ithb/model/Pengumuman.hbm.xml"/>
+    <mapping resource="com/ithb/model/Pegawai.hbm.xml"/>
+    <mapping resource="com/ithb/model/BahanKuliah.hbm.xml"/>
+    <mapping resource="com/ithb/model/Fasilitas.hbm.xml"/>
+    <mapping resource="com/ithb/model/Fakultas.hbm.xml"/>
+    <mapping resource="com/ithb/model/Dosen.hbm.xml"/>
+    <mapping resource="com/ithb/model/Frs.hbm.xml"/>
+    <mapping resource="com/ithb/model/BadanHukum.hbm.xml"/>
+    <mapping resource="com/ithb/model/KritikSaran.hbm.xml"/>
+    <mapping resource="com/ithb/model/Jadwal.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

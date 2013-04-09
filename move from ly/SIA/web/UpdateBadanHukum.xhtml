@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Update Badan Hukum</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="indexButton">
+            <p:button value="Index" outcome="index.xhtml"/>
+        </h:form>
+        
+        <h:form id="updateBadanHukumButton">
+            <p:button value="Update Badan Hukum" outcome="UpdateBadanHukum.xhtml"/>
+        </h:form>
+        
+        <h:form>
+            <p:panel header="Badan Hukum">
+                <h:panelGrid columns="3">
+                    
+                    <h:outputText value="Kode Badan Hukum"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.kodeBhukum}"/>
+                    
+                    <h:outputText value="Nama Badan Hukum"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.namaBhukum}"/>
+
+                    <h:outputText value="Tanggal Berdiri"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.tanggalBerdiri}"/>
+                    
+                    <h:outputText value="Nomor Akta"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.nomorAkta}"/>
+                    
+                    <h:outputText value="Tanggal Akta"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.tanggalAkta}"/>
+                    
+                    <h:outputText value="Kota"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.kota}"/>
+                    
+                    <h:outputText value="Alamat"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.alamat}"/>
+                    
+                    <h:outputText value="Kode Pos"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.kodePos}"/>
+                    
+                    <h:outputText value="Nomor Pengesahan"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.nomorPengesahan}"/>
+                    
+                    <h:outputText value="Tanggal Pengesahan"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.tanggalPengesahan}"/>
+                    
+                    <h:outputText value="Telepon"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.telepon}"/>
+                    
+                    <h:outputText value="Faks"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.faks}"/>
+                    
+                    <h:outputText value="Homepage"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.homepage}"/>
+                    
+                    <h:outputText value="Email"/>
+                    <h:outputText value=":"/>
+                    <p:inputText value="#{staffAdminController.badanHukum.email}"/>
+                                        
+                    
+                    <p:commandButton value="Update Badan Hukum" action="#{staffAdminController.updateBadanHukum}" update="@form, :successForm" onclick="successDialog.show()"/>
+
+                </h:panelGrid>
+            </p:panel>
+        </h:form>
+        
+        <p:dialog widgetVar="successDialog" showEffect="fade" hideEffect="fade" modal="true" maximizable="true" header="Confirmation Update Badan Hukum">
+            <h:form id="successForm">
+                <h:outputText value="#{staffAdminController.output}"/><br/><br/>
+                <p:commandButton value="OK" action="#{staffAdminController.deleteOutput}" oncomplete="successDialog.hide();"/>
+            </h:form>
+        </p:dialog>
+    </h:body>
+</html>
+

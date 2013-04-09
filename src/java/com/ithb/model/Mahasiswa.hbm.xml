@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Mahasiswa" table="mahasiswa" catalog="sia">
+        <id name="nim" type="string">
+            <column name="NIM" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pegawai" class="com.ithb.model.Pegawai" fetch="select">
+            <column name="NIP" length="20" />
+        </many-to-one>
+        <many-to-one name="biaya" class="com.ithb.model.Biaya" fetch="select">
+            <column name="KODE_BIAYA" length="20" />
+        </many-to-one>
+        <many-to-one name="departemen" class="com.ithb.model.Departemen" fetch="select">
+            <column name="KODE_DEPART" length="20" />
+        </many-to-one>
+        <property name="namaMhs" type="string">
+            <column name="NAMA_MHS" length="40" />
+        </property>
+        <property name="statusMhs" type="string">
+            <column name="STATUS_MHS" length="20" />
+        </property>
+        <property name="ipk" type="java.lang.Integer">
+            <column name="IPK" />
+        </property>
+        <property name="passMhs" type="string">
+            <column name="PASS_MHS" length="20" />
+        </property>
+        <property name="teleponMhs" type="string">
+            <column name="TELEPON_MHS" length="20" />
+        </property>
+        <property name="alamatMhs" type="string">
+            <column name="ALAMAT_MHS" length="40" />
+        </property>
+        <property name="jenisKelamin" type="string">
+            <column name="JENIS_KELAMIN" length="20" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

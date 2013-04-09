@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.MataKuliah" table="mata_kuliah" catalog="sia">
+        <id name="kodeMatkul" type="string">
+            <column name="KODE_MATKUL" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="departemen" class="com.ithb.model.Departemen" fetch="select">
+            <column name="KODE_DEPART" length="20" />
+        </many-to-one>
+        <property name="namaMatkul" type="string">
+            <column name="NAMA_MATKUL" length="20" />
+        </property>
+        <property name="prasyarat" type="string">
+            <column name="PRASYARAT" length="20" />
+        </property>
+        <property name="periodeSemester" type="string">
+            <column name="PERIODE_SEMESTER" length="40" />
+        </property>
+        <property name="kurikulum" type="string">
+            <column name="KURIKULUM" length="40" />
+        </property>
+        <property name="bobot1" type="java.lang.Integer">
+            <column name="BOBOT1" />
+        </property>
+        <property name="bobot2" type="java.lang.Integer">
+            <column name="BOBOT2" />
+        </property>
+        <property name="bobot3" type="java.lang.Integer">
+            <column name="BOBOT3" />
+        </property>
+        <property name="bobot4" type="java.lang.Integer">
+            <column name="BOBOT4" />
+        </property>
+        <property name="bobot5" type="java.lang.Integer">
+            <column name="BOBOT5" />
+        </property>
+        <property name="bobotSks" type="java.lang.Integer">
+            <column name="BOBOT_SKS" />
+        </property>
+        <property name="uas" type="java.lang.Integer">
+            <column name="UAS" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

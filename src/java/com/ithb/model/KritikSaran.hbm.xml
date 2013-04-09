@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.KritikSaran" table="kritik_saran" catalog="sia">
+        <id name="kodeKritik" type="string">
+            <column name="KODE_KRITIK" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="mahasiswa" class="com.ithb.model.Mahasiswa" fetch="select">
+            <column name="NIM" length="20" />
+        </many-to-one>
+        <property name="isiKritik" type="string">
+            <column name="ISI_KRITIK" length="300" />
+        </property>
+    </class>
+</hibernate-mapping>

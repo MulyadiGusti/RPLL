@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Fasilitas" table="fasilitas" catalog="sia">
+        <id name="kodeFasilitas" type="string">
+            <column name="KODE_FASILITAS" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="luasTanah" type="java.lang.Integer">
+            <column name="LUAS_TANAH" />
+        </property>
+        <property name="luasLahan" type="java.lang.Integer">
+            <column name="LUAS_LAHAN" />
+        </property>
+        <property name="luasRkuliah" type="java.lang.Integer">
+            <column name="LUAS_RKULIAH" />
+        </property>
+        <property name="jumlahRkuliah" type="java.lang.Integer">
+            <column name="JUMLAH_RKULIAH" />
+        </property>
+        <property name="luasRlab" type="java.lang.Integer">
+            <column name="LUAS_RLAB" />
+        </property>
+        <property name="jumlahRlab" type="java.lang.Integer">
+            <column name="JUMLAH_RLAB" />
+        </property>
+        <property name="luasRdosen" type="java.lang.Integer">
+            <column name="LUAS_RDOSEN" />
+        </property>
+        <property name="luasRdmin" type="java.lang.Integer">
+            <column name="LUAS_RDMIN" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

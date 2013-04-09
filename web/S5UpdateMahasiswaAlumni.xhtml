@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Halaman Utama Dosen</title>
+        <link href="../asd/Style/style.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div id="menu-wrapper">
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="#">Home</a></li>
+<!--                   // <li><a href="#">Blog</a></li>-->
+<!--                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Links</a></li>-->
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <div id="upperleft"> 
+                    <h:form>
+                        <p:inputText value="ID"> <label style="color: whitesmoke"> NIM </label></p:inputText>
+                        <p:inputText value="password" > <label style="color:whitesmoke"> Password </label></p:inputText>
+                    </h:form>
+                </div>
+            </div>
+            <!-- end #menu --> 
+        </div>
+
+        <div id="header-wrapper">
+            <div id="header">
+                <div id="logo">
+                    <img src="asd/gambarRPLL/logo.png"/>
+                </div>
+            </div>
+        </div>    
+
+
+        <div id="banner">
+            <p:imageSwitch effect="zoom">  
+                <ui:repeat value="#{imageSwitch.images}" var="image">  
+                    <p:graphicImage value="/asd/gambarRPLL/#{image}"/>  
+                </ui:repeat>  
+            </p:imageSwitch>
+        </div>
+        <div id="wrapper"> 
+            <!-- end #header -->
+            <div id="page">
+                <div id="page-bgtop">
+                    <div id="page-bgbtm">
+                        <div id="sidebar">
+                            <ul>
+                                <li>
+                                    <h2> Links </h2>
+                                    <ul>
+                                        <li><a href="UpdateBadanHukum.xhtml">Update Badan Hukum</a></li>
+                                        <li><a href="UpdateFasilitas.xhtml">Update Fasilitas</a></li>
+                                        <li><a href="HalamanUtamaMahasiswa.xhtml">Halaman Utama Mahasiswa</a></li>
+                                        <li><a href="HalamanUtamaDosen.xhtml">Halaman Utama Dosen</a></li>
+                                        <li><a href="S5UpdateMahasiswaAlumni.xhtml">Insert / Update Data Mahasiswa</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- end #sidebar -->
+                        <div id="content">
+                            <div class="post">
+                                <h2 class="title"><a href="#"> List Mahasiswa  </a></h2>
+                                <p class="meta"><span class="date">February 15, 2013</span><span class="posted">Posted by <a href="#">Admin</a></span></p>
+                                <div style="clear: both;">&nbsp;</div>
+                                <div class="entry">
+                                    <h:form id="formMahasiswaList">
+           
+            <p:dataTable value="#{mahasiswaController.mahasiswaList}" var="list">
+                <p:column headerText="NIM">
+                    #{list.nim}
+                </p:column>
+                <p:column headerText="Nama">     
+                    #{list.namaMhs}
+                </p:column>
+                <p:column headerText="Status">     
+                    #{list.statusMhs}
+                </p:column>
+                <p:column headerText="IPK">
+                    #{list.ipk}
+                </p:column>
+                <p:column headerText="Password">
+                    #{list.passMhs}
+                </p:column>
+                <p:column headerText="Telepon">
+                    #{list.teleponMhs}
+                </p:column>
+                <p:column headerText="Alamat">
+                    #{list.alamatMhs}
+                </p:column>
+                <p:column headerText="Jenis Kelamin">
+                    #{list.jenisKelamin}
+                </p:column>
+                <p:column headerText="Biaya">
+                    #{list.biaya.kodeBiaya}
+                </p:column>
+                <p:column headerText="Departemen">
+                    #{list.departemen.kodeDepart}
+                </p:column>
+                <p:column headerText="Dosen Wali">
+                    #{list.pegawai.nip}
+                </p:column>
+                <p:column>
+                   <p:commandButton action="#{mahasiswaController.select(list.nim)}" value="select" update="@form, :updateForm" onclick="updateDialog.show()" />
+                </p:column>   
+                <p:column>
+                   <p:commandButton action="#{mahasiswaController.delete(list.nim)}" value="delete" update="@form, :formMahasiswaList"/>
+                </p:column> 
+            </p:dataTable>
+      </h:form>
+               
+      <p:dialog widgetVar="updateDialog" showEffect="fade" hideEffect="fade"  modal="true" header="update Mahasiswa">
+            <h:form id="updateForm">
+                <p:panel header="Add Mahasiswa">
+                    <h:panelGrid columns="3">
+                        <h:outputText value="NIM"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.nim}"/>
+                       
+                        <h:outputText value="Nama"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.namaMhs}"/>
+
+                        <h:outputText value="Status"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.statusMhs}"/>
+
+                        <h:outputText value="IPK"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.ipk}"/>
+
+                        <h:outputText value="Password"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.passMhs}"/>
+
+                        <h:outputText value="Telepon"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.teleponMhs}"/>
+
+                        <h:outputText value="Alamat"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.alamatMhs}"/>
+
+                        <h:outputText value="Jenis Kelamin"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.mahasiswa.jenisKelamin}"/>
+                        
+                        <h:outputText value="Biaya"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.tempKodeBiaya}"/>
+                        
+                        <h:outputText value="Departemen"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.tempKodeDepart}"/>
+                        
+                        <h:outputText value="Dosen Wali"/>
+                        <h:outputText value=":"/>
+                        <p:inputText value="#{mahasiswaController.tempNip}"/>
+                        
+                        <p:commandButton action="#{mahasiswaController.insert}" value="Update" update="@form, :formMahasiswaList" oncomplete="updateDialog.hide();"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </p:dialog>
+        
+        <h:form>
+            <p:commandButton value="insert" onclick="updateDialog.show()" />
+        </h:form>  
+                                </div>
+                            </div>
+<!--                        <div class="post">
+                                
+                            </div>
+                            <div class="post">
+                                
+                            </div>-->
+                            <div style="clear: both;">&nbsp;</div>
+                        </div>
+
+                        <div style="clear: both;">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <!-- end #page --> 
+        </div>        
+
+
+    </h:body>
+</html>

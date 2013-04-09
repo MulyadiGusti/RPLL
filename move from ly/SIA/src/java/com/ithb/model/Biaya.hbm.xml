@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 8, 2013 2:36:03 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.ithb.model.Biaya" table="biaya" catalog="sia">
+        <id name="kodeBiaya" type="string">
+            <column name="KODE_BIAYA" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="biayaTetap" type="java.lang.Integer">
+            <column name="BIAYA_TETAP" />
+        </property>
+        <property name="biayaSks" type="java.lang.Integer">
+            <column name="BIAYA_SKS" />
+        </property>
+        <property name="biayaPraktikum" type="java.lang.Integer">
+            <column name="BIAYA_PRAKTIKUM" />
+        </property>
+        <property name="biayaMhs" type="java.lang.Integer">
+            <column name="BIAYA_MHS" />
+        </property>
+    </class>
+</hibernate-mapping>

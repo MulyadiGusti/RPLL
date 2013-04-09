@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="sia"/>
+  <table-filter match-name="mata_kuliah"/>
+  <table-filter match-name="dosen"/>
+  <table-filter match-name="badan_hukum"/>
+  <table-filter match-name="absen"/>
+  <table-filter match-name="mahasiswa"/>
+  <table-filter match-name="kelas"/>
+  <table-filter match-name="jadwal"/>
+  <table-filter match-name="staff"/>
+  <table-filter match-name="fakultas"/>
+  <table-filter match-name="tanggung_jawab"/>
+  <table-filter match-name="hak_akses"/>
+  <table-filter match-name="kritik_saran"/>
+  <table-filter match-name="periode"/>
+  <table-filter match-name="pegawai"/>
+  <table-filter match-name="fasilitas"/>
+  <table-filter match-name="biaya"/>
+  <table-filter match-name="frs"/>
+  <table-filter match-name="pengumuman"/>
+  <table-filter match-name="nilai"/>
+  <table-filter match-name="departemen"/>
+  <table-filter match-name="bahan_kuliah"/>
+</hibernate-reverse-engineering>
